@@ -1,0 +1,184 @@
+$card-image-height: 208px;
+$card-title-height: 57px;
+$card-body-height: 64px;
+$card-image-ratio: 1.33;
+$card-gutter: map-get($space-sm, 'x');
+
+.cards-grid,
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.cards-grid {
+  margin-top: $card-gutter * -1;
+  margin-left: $card-gutter * -1;
+}
+
+.cards-grid > * {
+  padding-top: $card-gutter;
+  padding-left: $card-gutter;
+}
+
+.cards-list > * {
+  padding-top: $card-gutter;
+}
+
+.cards-grid .card-container {
+  min-height: $card-image-height + $card-title-height + $card-body-height;
+}
+
+.cards-list .card-container {
+  height: ceil($card-image-height * 0.6);
+  width: 100%;
+}
+
+.card {
+  background: $default-background;
+  border-radius: $generic-border-radius;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  box-shadow: $shadow-1;
+}
+
+.card:hover {
+  box-shadow: $shadow-14;
+}
+
+.card-title {
+  cursor: pointer;
+  color: darken($default-text, 7%);
+  height: $card-title-height;
+  font-size: 0.95rem;
+  overflow: hidden;
+}
+
+.card-body {
+  font-size: 0.9rem;
+}
+
+.card-title,
+.card-body {
+  padding: map-get($space-xs, 'y') map-get($space-xs, 'x');
+}
+
+.cards-grid .card-image {
+  cursor: pointer;
+  border-radius: $generic-border-radius $generic-border-radius 0 0;
+  height: ceil($card-image-height * 0.75);
+  width: 100%;
+}
+
+.cards-grid .card-body {
+  max-height: $card-body-height;
+  overflow-y: hidden;
+}
+
+.cards-list .card {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-areas:
+    'card-image card-title'
+    'card-image card-body';
+  grid-template-columns: min-content auto;
+}
+
+.cards-list .card-image {
+  cursor: pointer;
+  height: 100%;
+  border-radius: $generic-border-radius 0 0 $generic-border-radius;
+  width: ceil(($card-image-height * 0.5) * $card-image-ratio);
+  grid-area: card-image;
+}
+
+.cards-list .card-title {
+  grid-area: card-title;
+}
+
+.cards-list .card-body {
+  grid-area: card-body;
+}
+
+.cards-list .card-title,
+.cards-list .card-body {
+  overflow: hidden;
+  padding-left: map-get($space-sm, 'x');
+}
+
+body.body--dark {
+  .card {
+    background: $dark-default-background;
+  }
+
+  .card-title {
+    color: lighten($dark-default-text, 7%);
+  }
+}
+
+@media (min-width: $breakpoint-sm-min) {
+  .cards-grid .card-container {
+    height: ceil(
+      ($card-image-height * 0.9) + $card-title-height + $card-body-height
+    );
+  }
+
+  .cards-list .card-container {
+    height: ceil($card-image-height * 0.7);
+  }
+
+  .cards-list .card-image {
+    width: ceil(($card-image-height * 0.8) * $card-image-ratio);
+  }
+
+  .cards-grid .card-image {
+    min-height: ceil($card-image-height * 0.9);
+  }
+}
+
+@media (min-width: $breakpoint-md-min) {
+  .cards-grid .card-container {
+    height: ceil(
+      ($card-image-height * 0.9) + $card-title-height + $card-body-height
+    );
+  }
+
+  .cards-grid .card-image {
+    min-height: ceil($card-image-height * 0.9);
+  }
+
+  .cards-list .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: $breakpoint-lg-min) {
+  .cards-grid .card-container {
+    height: ceil(
+      ($card-image-height * 0.9) + $card-title-height + $card-body-height
+    );
+  }
+
+  .cards-grid .card-image {
+    min-height: ceil($card-image-height * 0.9);
+  }
+
+  .cards-list .card-container {
+    height: ceil($card-image-height * 0.75);
+  }
+
+  .cards-list .card-title,
+  .cards-list .card-body {
+    padding-left: map-get($space-md, 'x');
+  }
+}
+
+@each $name, $size in $sizes {
+  @media (min-width: $size) {
+    .cards-grid .card-container {
+      width: map-get($card-widths, $name);
+    }
+  }
+}

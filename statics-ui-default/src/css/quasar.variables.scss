@@ -1,0 +1,278 @@
+$space-base: 20px;
+$html-font-size: 16px;
+
+// Max width at which point
+// current size ends
+
+// 1600	  256	  6	  1536	  64
+// 1280	  252	  5	  1260	  20
+// 1024	  250	  4	  1000	  24
+// 770	  250	  3	  750	    20
+
+$breakpoint-xs: 767px; // 599px
+$breakpoint-sm: 1023px; // 1023px
+$breakpoint-md: 1279px; // 1439px
+$breakpoint-lg: 1599px; // 1919px
+
+$container-max-widths: (
+  'xs': 100%,
+  'sm': 740px,
+  'md': 960px,
+  'lg': 1220px,
+  'xl': 1520px,
+);
+
+$card-widths: (
+  'xs': 50%,
+  'sm': 33.33%,
+  'md': 25%,
+  'lg': 20%,
+  'xl': 16.66%,
+);
+
+$body-font-size: 0.9rem;
+$button-font-size: 0.95rem;
+$toolbar-title-font-size: 1.5rem;
+$toolbar-padding-x: 12px;
+$toolbar-padding-y: 0;
+$toolbar-padding: $toolbar-padding-y $toolbar-padding-x;
+$input-font-size: 1rem;
+
+$h1: (
+  size: 4.4rem,
+  line-height: 5.4rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$h2: (
+  size: 3.3rem,
+  line-height: 4.3rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$h3: (
+  size: 2.3rem,
+  line-height: 3.3rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$h4: (
+  size: 1.8rem,
+  line-height: 2.6rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$h5: (
+  size: 1.4rem,
+  line-height: 2.1rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$h6: (
+  size: 1.2rem,
+  line-height: 1.7rem,
+  letter-spacing: normal,
+  weight: 500,
+);
+$subtitle1: (
+  size: 1rem,
+  line-height: 1.6rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$subtitle2: (
+  size: 0.9rem,
+  line-height: 1.4rem,
+  letter-spacing: normal,
+  weight: 500,
+);
+$body1: (
+  size: 1rem,
+  line-height: 1.7rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$body2: (
+  size: 0.9rem,
+  line-height: 1.4rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+$overline: (
+  size: 0.7rem,
+  line-height: 2rem,
+  letter-spacing: normal,
+  weight: 500,
+);
+$caption: (
+  size: 0.7rem,
+  line-height: 1.3rem,
+  letter-spacing: normal,
+  weight: 400,
+);
+
+$primary: darken(#5778d6, 3%);
+$secondary: #26a69a;
+$accent: #9c27b0;
+
+$positive: #2bae68;
+$negative: #c10015;
+$info: #31ccec;
+$warning: #f2c037;
+
+$generic-border-radius: 8px;
+$button-border-radius: 8px;
+$button-push-border-radius: 8px;
+
+$border-radius: (
+  'unset': 'unset',
+  'xs':
+    floor(
+      $number: $generic-border-radius * 0.25,
+    ),
+  'sm':
+    floor(
+      $number: $generic-border-radius * 0.5,
+    ),
+  'md': $generic-border-radius,
+  'lg':
+    floor(
+      $number: $generic-border-radius * 2,
+    ),
+  'xl':
+    floor(
+      $number: $generic-border-radius * 3,
+    ),
+);
+
+$dark-page: #0f121a;
+$dark: #0d1017;
+
+$header-background: #ffffff;
+$dark-header-background: $dark;
+
+$header-text-color: lighten(black, 7%);
+$dark-header-text-color: #ffffff;
+
+$body-background: #f7f7f7;
+$dark-body-background: $dark-page;
+
+$default-background: #ffffff;
+$dark-default-background: lighten($dark-body-background, 5%);
+
+// $alternative-background: #fafafa;
+// $dark-alternative-background: $dark-body-background;
+
+$default-text: lighten(black, 7%);
+$dark-default-text: darken(white, 7%);
+
+$alternative-text: lighten($default-text, 25%);
+$dark-alternative-text: darken($dark-default-text, 15%);
+
+$separator-base-color: darken(white, 70%);
+$separator-color: rgba($separator-base-color, 0.07);
+$separator-base-dark-color: lighten($primary, 25%);
+$separator-dark-color: rgba($separator-base-dark-color, 0.1);
+
+$shadow-color: darken(#fff, 30%);
+$shadow-transition: box-shadow 0.28s cubic-bezier(0.5, 0, 0.3, 1);
+$inset-shadow: 0 7px 9px -7px rgba($shadow-color, 0.7) inset;
+$inset-shadow-down: 0 -7px 9px -7px rgba($shadow-color, 0.7) inset;
+
+$dark-shadow-color: lighten(#000, 70%);
+$inset-dark-shadow: 0 7px 9px -7px rgba($dark-shadow-color, 0.7);
+$inset-dark-shadow-down: 0 -7px 9px -7px rgba($dark-shadow-color, 0.7);
+
+$layout-border: 1px solid $separator-color;
+$layout-shadow: 0 0 10px 2px rgba($shadow-color, 0.1),
+  0 0px 10px rgba($shadow-color, 0.3);
+$layout-shadow-dark: 0 0 10px 2px rgba($dark-shadow-color, 0.1),
+  0 0px 10px rgba($dark-shadow-color, 0.2);
+
+$elevation-umbra: rgba($shadow-color, 0.14);
+$elevation-penumbra: rgba($shadow-color, 0.1);
+$elevation-ambient: rgba($shadow-color, 0.08);
+
+$px-sizes: (0, 8, 32, 64, 96, 128, 256, 320, 448, 640, 800, 1024, 1280);
+
+$shadow-color-1nn: darken(white, 50%);
+
+$elevation-umbra-1nn: rgba($shadow-color-1nn, 0.3) !default;
+$elevation-penumbra-1nn: rgba($shadow-color-1nn, 0.2) !default;
+$elevation-ambient-1nn: rgba($shadow-color-1nn, 0.1) !default;
+
+$shadow-101: 0 1px 3px $elevation-umbra-1nn, 0 1px 1px $elevation-penumbra-1nn,
+  0 2px 1px -1px $elevation-ambient-1nn !default;
+$shadow-102: 0 1px 5px $elevation-umbra-1nn, 0 2px 2px $elevation-penumbra-1nn,
+  0 3px 1px -2px $elevation-ambient-1nn !default;
+$shadow-103: 0 1px 8px $elevation-umbra-1nn, 0 3px 4px $elevation-penumbra-1nn,
+  0 3px 3px -2px $elevation-ambient-1nn !default;
+$shadow-104: 0 2px 4px -1px $elevation-umbra-1nn,
+  0 4px 5px $elevation-penumbra-1nn, 0 1px 10px $elevation-ambient-1nn !default;
+$shadow-105: 0 3px 5px -1px $elevation-umbra-1nn,
+  0 5px 8px $elevation-penumbra-1nn, 0 1px 14px $elevation-ambient-1nn !default;
+$shadow-106: 0 3px 5px -1px $elevation-umbra-1nn,
+  0 6px 10px $elevation-penumbra-1nn, 0 1px 18px $elevation-ambient-1nn !default;
+$shadow-107: 0 4px 5px -2px $elevation-umbra-1nn,
+  0 7px 10px 1px $elevation-penumbra-1nn, 0 2px 16px 1px $elevation-ambient-1nn !default;
+$shadow-108: 0 5px 5px -3px $elevation-umbra-1nn,
+  0 8px 10px 1px $elevation-penumbra-1nn, 0 3px 14px 2px $elevation-ambient-1nn !default;
+$shadow-109: 0 5px 6px -3px $elevation-umbra-1nn,
+  0 9px 12px 1px $elevation-penumbra-1nn, 0 3px 16px 2px $elevation-ambient-1nn !default;
+$shadow-110: 0 6px 6px -3px $elevation-umbra-1nn,
+  0 10px 14px 1px $elevation-penumbra-1nn, 0 4px 18px 3px $elevation-ambient-1nn !default;
+$shadow-111: 0 6px 7px -4px $elevation-umbra-1nn,
+  0 11px 15px 1px $elevation-penumbra-1nn, 0 4px 20px 3px $elevation-ambient-1nn !default;
+$shadow-112: 0 7px 8px -4px $elevation-umbra-1nn,
+  0 12px 17px 2px $elevation-penumbra-1nn, 0 5px 22px 4px $elevation-ambient-1nn !default;
+$shadow-113: 0 7px 8px -4px $elevation-umbra-1nn,
+  0 13px 19px 2px $elevation-penumbra-1nn, 0 5px 24px 4px $elevation-ambient-1nn !default;
+$shadow-114: 0 7px 9px -4px $elevation-umbra-1nn,
+  0 14px 21px 2px $elevation-penumbra-1nn, 0 5px 26px 4px $elevation-ambient-1nn !default;
+$shadow-115: 0 8px 9px -5px $elevation-umbra-1nn,
+  0 15px 22px 2px $elevation-penumbra-1nn, 0 6px 28px 5px $elevation-ambient-1nn !default;
+$shadow-116: 0 8px 10px -5px $elevation-umbra-1nn,
+  0 16px 24px 2px $elevation-penumbra-1nn, 0 6px 30px 5px $elevation-ambient-1nn !default;
+$shadow-117: 0 8px 11px -5px $elevation-umbra-1nn,
+  0 17px 26px 2px $elevation-penumbra-1nn, 0 6px 32px 5px $elevation-ambient-1nn !default;
+$shadow-118: 0 9px 11px -5px $elevation-umbra-1nn,
+  0 18px 28px 2px $elevation-penumbra-1nn, 0 7px 34px 6px $elevation-ambient-1nn !default;
+$shadow-119: 0 9px 12px -6px $elevation-umbra-1nn,
+  0 19px 29px 2px $elevation-penumbra-1nn, 0 7px 36px 6px $elevation-ambient-1nn !default;
+$shadow-120: 0 10px 13px -6px $elevation-umbra-1nn,
+  0 20px 31px 3px $elevation-penumbra-1nn, 0 8px 38px 7px $elevation-ambient-1nn !default;
+$shadow-121: 0 10px 13px -6px $elevation-umbra-1nn,
+  0 21px 33px 3px $elevation-penumbra-1nn, 0 8px 40px 7px $elevation-ambient-1nn !default;
+$shadow-122: 0 10px 14px -6px $elevation-umbra-1nn,
+  0 22px 35px 3px $elevation-penumbra-1nn, 0 8px 42px 7px $elevation-ambient-1nn !default;
+$shadow-123: 0 11px 14px -7px $elevation-umbra-1nn,
+  0 23px 36px 3px $elevation-penumbra-1nn, 0 9px 44px 8px $elevation-ambient-1nn !default;
+$shadow-124: 0 11px 15px -7px $elevation-umbra-1nn,
+  0 24px 38px 3px $elevation-penumbra-1nn, 0 9px 46px 8px $elevation-ambient-1nn !default;
+
+$shadows-1nn: (
+  $shadow-101,
+  $shadow-102,
+  $shadow-103,
+  $shadow-104,
+  $shadow-105,
+  $shadow-106,
+  $shadow-107,
+  $shadow-108,
+  $shadow-109,
+  $shadow-110,
+  $shadow-111,
+  $shadow-112,
+  $shadow-113,
+  $shadow-114,
+  $shadow-115,
+  $shadow-116,
+  $shadow-117,
+  $shadow-118,
+  $shadow-119,
+  $shadow-120,
+  $shadow-121,
+  $shadow-122,
+  $shadow-123,
+  $shadow-124
+);

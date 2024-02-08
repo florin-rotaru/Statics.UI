@@ -1,0 +1,25 @@
+.text-inherit {
+  color: inherit;
+}
+
+.text-alternative {
+  color: $alternative-text !important;
+}
+
+.text-default {
+  color: $default-text !important;
+}
+
+body.body--dark {
+  .text-alternative {
+    color: $dark-alternative-text !important;
+  }
+
+  .text-default {
+    color: $dark-default-text !important;
+  }
+}
+
+.text-weight-semi-bold {
+  font-weight: 600;
+}
